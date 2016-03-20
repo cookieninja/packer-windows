@@ -9,15 +9,17 @@
       "boot_wait": "2m",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
-      "ssh_wait_timeout": "2h",
+      "ssh_wait_timeout": "8h",
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
-      "guest_os_type": "windows7srv-64",
+      "guest_os_type": "windows7-64",
       "tools_upload_flavor": "windows",
       "disk_size": 61440,
       "vnc_port_min": 5900,
       "vnc_port_max": 5980,
       "floppy_files": [
         "{{user `autounattend`}}",
+        "./scripts/dis-updates.ps1",
+        "./scripts/hotfix-KB3102810.bat",
         "./scripts/microsoft-updates.bat",
         "./scripts/win-updates.ps1",
         "./scripts/openssh.ps1"
@@ -32,23 +34,21 @@
     },
     {
       "type": "virtualbox-iso",
-      "virtualbox_version_file": ".vbox_version",
       "iso_url": "{{user `iso_url`}}",
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
       "iso_checksum": "{{user `iso_checksum`}}",
-      "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
-      "guest_additions_url":  "iso/VBoxGuestAdditions_{{.Version}}.iso",
-      "guest_additions_sha256": "187f49b567dea056d9de255c155f8eaa3449dffe08ccf22ae8ab1dda708f78fe",
       "headless": true,
       "boot_wait": "2m",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
-      "ssh_wait_timeout": "2h",
+      "ssh_wait_timeout": "8h",
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
-      "guest_os_type": "Windows2008_64",
+      "guest_os_type": "Windows7_64",
       "disk_size": 61440,
       "floppy_files": [
         "{{user `autounattend`}}",
+        "./scripts/dis-updates.ps1",
+        "./scripts/hotfix-KB3102810.bat",
         "./scripts/microsoft-updates.bat",
         "./scripts/win-updates.ps1",
         "./scripts/openssh.ps1",
@@ -80,6 +80,7 @@
         "./scripts/vagrant-ssh.bat",
         "./scripts/disable-auto-logon.bat",
         "./scripts/enable-rdp.bat",
+        "./scripts/compile-dotnet-assemblies.bat",
         "./scripts/compact.bat"
       ]
     }
@@ -88,14 +89,14 @@
     {
       "type": "vagrant",
       "keep_input_artifact": false,
-      "output": "windows_2008_r2_core_{{.Provider}}.box",
-      "vagrantfile_template": "vagrantfile-windows_2008_r2.template"
+      "output": "windows_7_{{.Provider}}.box",
+      "vagrantfile_template": "vagrantfile-windows_7.template"
     }
   ],
   "variables": {
-    "iso_url": "iso/windows_2008r2.iso",",
+    "iso_url": "http://care.dlservice.microsoft.com/dl/download/evalx/win7/x64/EN/7600.16385.090713-1255_x64fre_enterprise_en-us_EVAL_Eval_Enterprise-GRMCENXEVAL_EN_DVD.iso",
     "iso_checksum_type": "md5",
-    "iso_checksum": "4263be2cf3c59177c45085c0a7bc6ca5",
-    "autounattend": "./answer_files/2008_r2_core/Autounattend.xml"
+    "iso_checksum": "1d0d239a252cb53e466d39e752b17c28",
+    "autounattend": "./answer_files/7/Autounattend.xml"
   }
 }
