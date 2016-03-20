@@ -94,7 +94,7 @@
     }
   ],
   "variables": {
-    "iso_url": "iso/windows_81.iso",
+    "iso_url": "iso/windows81.iso",
     "iso_checksum_type": "md5",
     "iso_checksum": "5e4ecb86fd8619641f1d58f96e8561ec",
     "autounattend": "./answer_files/81/Autounattend.xml"

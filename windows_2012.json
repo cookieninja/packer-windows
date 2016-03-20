@@ -94,7 +94,7 @@
     }
   ],
   "variables": {
-    "iso_url": "iso/windows_2012.iso",
+    "iso_url": "iso/windows2012.iso",
     "iso_checksum_type": "md5",
     "iso_checksum": "8503997171f731d9bd1cb0b0edc31f3d",
     "autounattend": "./answer_files/2012/Autounattend.xml"

@@ -9,7 +9,7 @@
       "boot_wait": "2m",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
-      "ssh_wait_timeout": "2h",
+      "ssh_wait_timeout": "6h",
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "guest_os_type": "windows8srv-64",
       "tools_upload_flavor": "windows",
@@ -39,13 +39,13 @@
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "guest_additions_url":  "iso/VBoxGuestAdditions_{{.Version}}.iso",
       "guest_additions_sha256": "187f49b567dea056d9de255c155f8eaa3449dffe08ccf22ae8ab1dda708f78fe",
-      "headless": false,
+      "headless": true,
       "boot_wait": "2m",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
-      "ssh_wait_timeout": "2h",
+      "ssh_wait_timeout": "6h",
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
-      "guest_os_type": "Windows81_64",
+      "guest_os_type": "Windows2012_64",
       "disk_size": 61440,
       "floppy_files": [
         "{{user `autounattend`}}",
@@ -78,9 +78,9 @@
       "scripts": [
         "./scripts/vm-guest-tools.bat",
         "./scripts/vagrant-ssh.bat",
-        "./scripts/disable-auto-logon.bat",
         "./scripts/enable-rdp.bat",
         "./scripts/compile-dotnet-assemblies.bat",
+        "./scripts/disable-auto-logon.bat",
         "./scripts/compact.bat"
       ]
     }
@@ -89,14 +89,14 @@
     {
       "type": "vagrant",
       "keep_input_artifact": false,
-      "output": "windows_81_{{.Provider}}.box",
-      "vagrantfile_template": "vagrantfile-windows_81.template"
+      "output": "windows_2012_r2_{{.Provider}}.box",
+      "vagrantfile_template": "vagrantfile-windows_2012_r2.template"
     }
   ],
   "variables": {
-    "iso_url": "iso/windows_81.iso",
+    "iso_url": "iso/windows2012r2.iso",
     "iso_checksum_type": "md5",
-    "iso_checksum": "5e4ecb86fd8619641f1d58f96e8561ec",
-    "autounattend": "./answer_files/81/Autounattend.xml"
+    "iso_checksum": "458ff91f8abc21b75cb544744bf92e6a",
+    "autounattend": "./answer_files/2012_r2/Autounattend.xml"
   }
 }
