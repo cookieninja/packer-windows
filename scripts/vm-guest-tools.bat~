@@ -34,7 +34,7 @@ echo "in virtualbox section"  1> C:\Windows\Temp\error2.msg 2>&1
 cmd /c certutil -addstore -f "TrustedPublisher" A:\oracle-cert.cer 1> C:\Windows\Temp\error3.msg 2>&1
 
 move /Y C:\Users\vagrant\VBoxGuestAdditions_4.3.34.iso C:\Windows\Temp 1> C:\Windows\Temp\error4.msg 2>&1
-cmd /c ""C:\Program Files\7-Zip\7z.exe" x C:\Windows\Temp\VBoxGuestAdditions_4.3.34.iso -oC:\Windows\Temp\virtualbox" 1> C:\Windows\Temp\error5.msg 2>&1
+cmd /c ""C:\Program Files\7-Zip\7z.exe" x C:\Windows\Temp\VBoxGuestAdditions.iso -oC:\Windows\Temp\virtualbox" 1> C:\Windows\Temp\error5.msg 2>&1
 cmd /c C:\Windows\Temp\virtualbox\VBoxWindowsAdditions.exe /S 1> C:\Windows\Temp\error6.msg 2>&1
 goto :done
 
