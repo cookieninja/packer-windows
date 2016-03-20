@@ -48,7 +48,7 @@
       "guest_additions_sha256": "c711323e699c0434efb60099b1a0d642",
       "guest_additions_url": "iso/VBoxGuestAdditions_{{.Version}}.iso",
       "guest_os_type": "Windows7_64",
-      "headless": true,
+      "headless": false,
       "iso_checksum": "{{user `iso_checksum`}}",
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
       "iso_url": "{{user `iso_url`}}",

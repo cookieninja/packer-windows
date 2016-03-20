@@ -38,7 +38,7 @@
       "iso_checksum": "{{user `iso_checksum`}}",
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "guest_additions_url":  "iso/VBoxGuestAdditions_{{.Version}}.iso",
-      "guest_additions_sha256": "187f49b567dea056d9de255c155f8eaa3449dffe08ccf22ae8ab1dda708f78fe",
+      "guest_additions_sha256": "c711323e699c0434efb60099b1a0d642",
       "headless": true,
       "boot_wait": "2m",
       "ssh_username": "vagrant",

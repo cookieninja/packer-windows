@@ -5,7 +5,7 @@
       "iso_url": "{{user `iso_url`}}",
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
       "iso_checksum": "{{user `iso_checksum`}}",
-      "headless": true,
+      "headless": false,
       "boot_wait": "2m",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
@@ -18,6 +18,7 @@
       "vnc_port_max": 5980,
       "floppy_files": [
         "{{user `autounattend`}}",
+        "./scripts/fixnetwork.ps1",
         "./scripts/microsoft-updates.bat",
         "./scripts/win-updates.ps1",
         "./scripts/openssh.ps1"
@@ -39,7 +40,7 @@
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "guest_additions_url":  "iso/VBoxGuestAdditions_{{.Version}}.iso",
       "guest_additions_sha256": "c711323e699c0434efb60099b1a0d642",
-      "headless": true,
+      "headless": false,
       "boot_wait": "2m",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
@@ -49,6 +50,7 @@
       "disk_size": 61440,
       "floppy_files": [
         "{{user `autounattend`}}",
+        "./scripts/fixnetwork.ps1",
         "./scripts/microsoft-updates.bat",
         "./scripts/win-updates.ps1",
         "./scripts/openssh.ps1",
@@ -89,14 +91,14 @@
     {
       "type": "vagrant",
       "keep_input_artifact": false,
-      "output": "windows_81_{{.Provider}}.box",
-      "vagrantfile_template": "vagrantfile-windows_81.template"
+      "output": "windows_10_{{.Provider}}.box",
+      "vagrantfile_template": "vagrantfile-windows_10.template"
     }
   ],
   "variables": {
-    "iso_url": "iso/windows81.iso",
-    "iso_checksum_type": "md5",
-    "iso_checksum": "5e4ecb86fd8619641f1d58f96e8561ec",
-    "autounattend": "./answer_files/81/Autounattend.xml"
+    "iso_url": "iso/windows10.iso",
+    "iso_checksum_type": "sha1",
+    "iso_checksum": "56ab095075be28a90bc0b510835280975c6bb2ce",
+    "autounattend": "./answer_files/10/Autounattend.xml"
   }
 }
