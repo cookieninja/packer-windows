@@ -1,0 +1,9 @@
+packer build windows_10.json
+packer build windows_2008r2_core.json
+packer build windows_2008r2.json
+packer build windows_2012.json
+packer build windows_2012r2_core.json
+packer build windows_2012r2_hyperv.json
+packer build windows_2012r2.json
+packer build windows_7.json
+packer build windows_81.json
