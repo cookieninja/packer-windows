@@ -8,4 +8,5 @@
 /output-virtualbox-iso/
 /output-virtualbox-ovf/
 /*.box
+/build/*.box
 /packer_cache/
