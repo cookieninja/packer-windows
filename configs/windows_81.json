@@ -37,8 +37,8 @@
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
       "iso_checksum": "{{user `iso_checksum`}}",
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
-      "guest_additions_url":  "iso/VBoxGuestAdditions_{{.Version}}.iso",
-      "guest_additions_sha256": "a6f20f5b8ec11ae127ae48bcb19c20de488d38dbf807a8608a6468da7353a9a8",
+      "guest_additions_url":  "./iso/VBoxGuestAdditions_{{.Version}}.iso",
+      "guest_additions_sha256": "13a0265cab971ac3e31e83959a68e377c7f014f429fa3a168c86fb2399df4321",
       "headless": true,
       "boot_wait": "2m",
       "ssh_username": "vagrant",
@@ -90,11 +90,11 @@
       "type": "vagrant",
       "keep_input_artifact": false,
       "output": "windows_81_{{.Provider}}.box",
-      "vagrantfile_template": "vagrantfile-windows_81.template"
+      "vagrantfile_template": "./templates/vagrantfile-windows_81.template"
     }
   ],
   "variables": {
-    "iso_url": "iso/windows81.iso",
+    "iso_url": "./iso/windows81.iso",
     "iso_checksum_type": "md5",
     "iso_checksum": "5e4ecb86fd8619641f1d58f96e8561ec",
     "autounattend": "./answer_files/81/Autounattend.xml"
