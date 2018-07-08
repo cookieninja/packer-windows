@@ -45,7 +45,7 @@
         "./scripts/oracle-cert.cer"
       ],
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
-      "guest_additions_sha256": "13a0265cab971ac3e31e83959a68e377c7f014f429fa3a168c86fb2399df4321",
+      "guest_additions_sha256": "66824ee3a0373da62b15f6687a68e2305d7e62d700e538cf32705227bb38c46d",
       "guest_additions_url": "./iso/VBoxGuestAdditions_{{.Version}}.iso",
       "guest_os_type": "Windows7_64",
       "headless": true,
